@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "polybuild_config": {
+    "version": {
+      "major": 1,
+      "minor": 0
+    },
+    "validation": {
+      "enabled": true,
+      "strict_mode": false
+    },
+    "logging": {
+      "level": "info",
+      "output": "stdout"
+    }
+  },
+  "module_defaults": {
+    "schema_validation": true,
+    "error_handling": "strict",
+    "performance_monitoring": false
+  }
+}

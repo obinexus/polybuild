@@ -61,3 +61,44 @@ message(STATUS "  Version: setup-modules.ps1{PROJECT_VERSION}")
 message(STATUS "  Build Type: setup-modules.ps1{CMAKE_BUILD_TYPE}")
 message(STATUS "  C Compiler: setup-modules.ps1{CMAKE_C_COMPILER}")
 message(STATUS "  Install Prefix: setup-modules.ps1{CMAKE_INSTALL_PREFIX}")
+
+# IOC Configuration System Integration
+# Added by PolyBuild refactoring script
+
+# Include directories for IOC configuration
+include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/include/config)
+
+# Core configuration source files
+set(CONFIG_CORE_SOURCES
+    src/core/config/config_ioc.c
+    src/core/config/config_for_crypto.c
+    src/core/config/config_for_micro.c
+    src/core/config/config_for_edge.c
+    src/core/config/config_for_telemetry.c
+    src/core/config/config_for_repl.c
+)
+
+# CLI configuration source files  
+set(CONFIG_CLI_SOURCES
+    src/cli/config/config.c
+)
+
+# Update main executable to include configuration system
+target_sources(polybuild PRIVATE ${CONFIG_CORE_SOURCES} ${CONFIG_CLI_SOURCES})
+
+# Add configuration validation target
+add_custom_target(config-validate
+    COMMAND ${CMAKE_BINARY_DIR}/bin/polybuild config validate --all
+    DEPENDS polybuild
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    COMMENT "Validating PolyBuild configuration system"
+)
+
+# Add configuration testing
+add_test(NAME config_system_test 
+         COMMAND polybuild config list
+         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+add_test(NAME config_crypto_test 
+         COMMAND polybuild config show --module crypto
+         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
