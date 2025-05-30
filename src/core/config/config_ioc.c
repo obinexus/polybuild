@@ -11,7 +11,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "../../include/config/config_ioc.h"
+#include <polybuild/core/config_ioc.h>
 
 // Configuration registry for systematic module management
 static module_config_entry_t config_registry[MAX_CONFIG_MODULES];

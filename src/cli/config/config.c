@@ -11,7 +11,7 @@
 #include <string.h>
 #include <getopt.h>
 
-#include "../../include/config/config_ioc.h"
+#include <polybuild/core/config_ioc.h>
 
 // Forward declarations for CLI command handlers
 static int handle_show_command(int argc, char* argv[]);

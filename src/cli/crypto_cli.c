@@ -7,7 +7,7 @@
  * Implements systematic CLI interface for cryptographic operations
  */
 
-#include "../core/crypto/crypto.h"
+#include <polybuild/core/crypto.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

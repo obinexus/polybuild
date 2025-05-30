@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "../../include/config/config_ioc.h"
+#include <polybuild/core/config_ioc.h>
 
 // Static configuration for repl module with systematic validation
 static polybuild_config_t repl_config = {

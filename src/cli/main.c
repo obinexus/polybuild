@@ -9,14 +9,14 @@
 #include <string.h>
 
 // Include all module headers with systematic organization
-#include "../core/crypto/crypto.h"
+#include <polybuild/core/crypto.h>
 #include "../core/micro/micro.h"
 #include "../core/edge/edge.h"
 #include "../core/telemetry/telemetry.h"
 #include "../core/repl/repl.h"
 
 // Include IOC configuration system
-#include "../include/config/config_ioc.h"
+#include <polybuild/core/config_ioc.h>
 
 // Forward declarations for CLI interface functions
 extern int crypto_cli_main(int argc, char* argv[]);
