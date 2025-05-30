@@ -1,79 +1,47 @@
+/*
+ * main.c - Enhanced PolyBuild CLI with IOC Configuration Integration
+ * Version: 1.0.0 - PolyBuild Modular Build System
+ * Author: Aegis Project Team - OBINexus Computing
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-// Include all module headers
+// Include all module headers with systematic organization
+#include "../core/crypto/crypto.h"
 #include "../core/micro/micro.h"
- #include "../core/repl/repl.h"
- #include "../core/edge/edge.h"
- #include "../core/crypto/crypto.h"
- #include "../core/telemetry/telemetry.h"
+#include "../core/edge/edge.h"
+#include "../core/telemetry/telemetry.h"
+#include "../core/repl/repl.h"
 
+// Include IOC configuration system
+#include "../include/config/config_ioc.h"
 
+// Forward declarations for CLI interface functions
+extern int crypto_cli_main(int argc, char* argv[]);
+extern int micro_cli_main(int argc, char* argv[]);
+extern int edge_cli_main(int argc, char* argv[]);
+extern int telemetry_cli_main(int argc, char* argv[]);
+extern int repl_cli_main(int argc, char* argv[]);
+extern int config_cli_main(int argc, char* argv[]);
+
+// Command registry structure for systematic dispatch
 typedef struct {
     const char* name;
     const char* description;
     int (*execute)(int argc, char* argv[]);
+    bool requires_config;
 } command_t;
 
-// Command registry
+// Enhanced command registry with configuration integration
 static command_t commands[] = {
-    {"micro", "Microservice isolation and dependency management", micro_execute},
-     {"repl", "Interactive build configuration testing environment", repl_execute},
-     {"edge", "Edge deployment cache preparation and sync logic", edge_execute},
-     {"crypto", "Schema-driven cryptographic primitives and validation", crypto_execute},
-     {"telemetry", "Build state tracking and checkpoint management", telemetry_execute},
-
-    {NULL, NULL, NULL}
+    {"crypto", "Schema-driven cryptographic primitives and validation", crypto_cli_main, true},
+    {"micro", "Microservice isolation and dependency management", micro_cli_main, true},
+    {"edge", "Edge deployment cache preparation and sync logic", edge_cli_main, true},
+    {"telemetry", "Build state tracking and checkpoint management", telemetry_cli_main, true},
+    {"repl", "Interactive build configuration testing environment", repl_cli_main, true},
+    {"config", "Configuration management and IOC system interface", config_cli_main, false},
+    {NULL, NULL, NULL, false}
 };
 
-void print_usage(const char* program_name) {
-    printf("PolyBuild - Modular Build System for Polyglot Projects\n\n");
-    printf("Usage: %s <command> [options]\n\n", program_name);
-    printf("Available commands:\n");
-    
-    for (int i = 0; commands[i].name != NULL; i++) {
-        printf("  %-12s %s\n", commands[i].name, commands[i].description);
-    }
-    
-    printf("\nFor command-specific help, use: %s <command> --help\n", program_name);
-}
-
-int main(int argc, char* argv[]) {
-    if (argc < 2) {
-        print_usage(argv[0]);
-        return 1;
-    }
-    
-    const char* command_name = argv[1];
-    
-    // Find and execute command
-    for (int i = 0; commands[i].name != NULL; i++) {
-        if (strcmp(commands[i].name, command_name) == 0) {
-            // Initialize all modules
-            micro_init();
-             repl_init();
-             edge_init();
-             crypto_init();
-             telemetry_init();
-
-            
-            // Execute specific command
-            int result = commands[i].execute(argc - 1, argv + 1);
-            
-            // Cleanup all modules
-            micro_cleanup();
-             repl_cleanup();
-             edge_cleanup();
-             crypto_cleanup();
-             telemetry_cleanup();
-
-            
-            return result;
-        }
-    }
-    
-    printf("Unknown command: %s\n", command_name);
-    print_usage(argv[0]);
-    return 1;
-}
