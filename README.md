@@ -73,6 +73,34 @@ resolution_result_t execute_priority_resolution(
 );
 ```
 
+## 📚 Documentation & Resources
+
+### Technical Documentation
+- **[IOC Configuration Architecture](docs/ioc_configuration_architecture.md)**: Comprehensive system design
+- **[Command Strategy Patterns](docs/command_strategy.md)**: Systematic abstraction implementation
+- **[Schema Management Guide](docs/schema_management.md)**: Configuration validation procedures
+- **[Cross-Platform Integration](docs/platform_integration.md)**: Build system deployment
+
+### Integration Examples
+- **[Enterprise Deployment](examples/enterprise/)**: Large-scale configuration patterns
+- **[Polyglot Projects](examples/polyglot/)**: Multi-language build coordination
+- **[Legacy Integration](examples/legacy/)**: Migration from traditional build systems
+
+---
+## Constructive Use & Contribution Policy
+
+PolyBuild is shared to **enable builders**, not bystanders.
+
+We welcome users who **actively contribute** — via code, feedback, docs, or testing. If you're here just to consume and demand more, without pitching in—even to report a bug—this usage makes us question if this space is the right fit.
+
+### 🚀 If you're using PolyBuild:
+- Please **star**, **report issues**, or **submit PRs**—even if small.
+- Engage in discussions or testing.
+- We’re a small, human-run project: your energy matters more than any feature request.
+
+**Use this tool. Improve it. Or step aside for someone who will.**  
+Let’s grow PolyBuild together—for real.
+
 ---
 
 ## 🎯 Strategic Vision: Polymorphic Infrastructure Revolution
@@ -527,20 +555,6 @@ polybuild --linker=nlink config validate --all --environment production --single
 
 ---
 
-## 📚 Documentation & Resources
-
-### Technical Documentation
-- **[IOC Configuration Architecture](docs/ioc_configuration_architecture.md)**: Comprehensive system design
-- **[Command Strategy Patterns](docs/command_strategy.md)**: Systematic abstraction implementation
-- **[Schema Management Guide](docs/schema_management.md)**: Configuration validation procedures
-- **[Cross-Platform Integration](docs/platform_integration.md)**: Build system deployment
-
-### Integration Examples
-- **[Enterprise Deployment](examples/enterprise/)**: Large-scale configuration patterns
-- **[Polyglot Projects](examples/polyglot/)**: Multi-language build coordination
-- **[Legacy Integration](examples/legacy/)**: Migration from traditional build systems
-
----
 
 ## 🎯 Strategic Vision: Polymorphic Infrastructure Revolution
 
