@@ -10,7 +10,7 @@
 #include <stdint.h>
 #include <stdbool.h> 
 #include <stdlib.h>
-#include "taxonomy.h" // Added to provide TaxonomyCategory
+#include "../trie/taxonomy.h" // Added to provide TaxonomyCategory
 
 /**
  * @brief Token type enumeration for DAG nodes

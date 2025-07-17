@@ -1,4 +1,4 @@
-#include "trie_dag.h"
+#include "../../trie/trie.h"
 #include <stdlib.h>
 #include <string.h>
 
