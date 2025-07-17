@@ -1,0 +1,9 @@
+/home/obinexus/obinexus/pkg/polybuild/build/CMakeFiles/polybuild.dir
+/home/obinexus/obinexus/pkg/polybuild/build/CMakeFiles/polybuild_static.dir
+/home/obinexus/obinexus/pkg/polybuild/build/CMakeFiles/polybuild_test.dir
+/home/obinexus/obinexus/pkg/polybuild/build/CMakeFiles/edit_cache.dir
+/home/obinexus/obinexus/pkg/polybuild/build/CMakeFiles/rebuild_cache.dir
+/home/obinexus/obinexus/pkg/polybuild/build/CMakeFiles/list_install_components.dir
+/home/obinexus/obinexus/pkg/polybuild/build/CMakeFiles/install.dir
+/home/obinexus/obinexus/pkg/polybuild/build/CMakeFiles/install/local.dir
+/home/obinexus/obinexus/pkg/polybuild/build/CMakeFiles/install/strip.dir

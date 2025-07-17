@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC  -Wall -Wextra -pedantic -O2 -DNDEBUG -shared -Wl,-soname,libpolybuild.so -o libpolybuild.so CMakeFiles/polybuild.dir/src/core/dag/dag.c.o CMakeFiles/polybuild.dir/src/core/trie/trie.c.o CMakeFiles/polybuild.dir/src/core/integration/trie_dag.c.o 

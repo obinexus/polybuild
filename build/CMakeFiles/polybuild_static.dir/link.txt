@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpolybuild.a CMakeFiles/polybuild_static.dir/src/core/dag/dag.c.o CMakeFiles/polybuild_static.dir/src/core/trie/trie.c.o CMakeFiles/polybuild_static.dir/src/core/integration/trie_dag.c.o
+/usr/bin/ranlib libpolybuild.a
