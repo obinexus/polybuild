@@ -16,18 +16,17 @@ int dag_init(void) {
     return 0;
 }
                                 
-DAGNode* dag_node_create(TokenType t, TaxonomyCategory cat) {
-    DAGNode *node = (DAGNode*)calloc(1, sizeof(DAGNode));
-    if (!node) return NULL;
-    
-    node->type = t;
-    node->category = cat;
-    node->state = STATE_UNKNOWN;
-    node->in_edges = NULL;
-    node->out_edges = NULL;
-    node->in_count = 0;
-    node->out_count = 0;
-    
+DAGNode* dag_node_create(TokenType type, TaxonomyCategory category) {
+    DAGNode* node = (DAGNode*)malloc(sizeof(DAGNode));
+    if (node) {
+        node->type = type;
+        node->category = category;
+        node->state = (NodeState)STATE_UNKNOWN;
+        node->in_edges = NULL;
+        node->out_edges = NULL;
+        node->in_count = 0;
+        node->out_count = 0;
+    }
     return node;
 }
 
@@ -96,6 +95,23 @@ static void resolve_node_recursive(DAGNode *nodes[], size_t node_count,
     
     // Process all outgoing edges
     DAGNode *node = nodes[current];
+
+     for (size_t i = 0; i < node->in_count; i++) {
+        DAGEdge* edge = node->in_edges[i];
+        if (edge) {
+            DAGNode* source = edge->target;
+            if (source) {
+                if (source->state == (NodeState)STATE_TRUE) {
+                    node->state = (NodeState)STATE_TRUE;
+                } else if (source->state == (NodeState)STATE_FALSE) {
+                    node->state = (NodeState)STATE_FALSE;
+                } else {
+                    resolve_node_recursive(source);
+                }
+            }
+        }
+    }
+    
     for (size_t i = 0; i < node->out_count; i++) {
         // Find index of the target node
         DAGNode *target = node->out_edges[i]->target;
