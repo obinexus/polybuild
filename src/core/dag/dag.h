@@ -23,6 +23,14 @@ typedef enum {
     TOKEN_OPERATOR
 } TokenType;
 
+/**
+ * @brief Node state enumeration 
+ */
+typedef enum {
+    STATE_UNKNOWN,
+    STATE_TRUE,
+    STATE_FALSE
+} NodeState;
 
 typedef struct DAGNode {
   TokenType type;
@@ -32,6 +40,8 @@ typedef struct DAGNode {
   struct DAGEdge** out_edges;
   size_t in_count;
   size_t out_count;
+  DAGEdge** in_edges;
+  DAGEdge** out_edges;
 } DAGNode;
 
 typedef struct DAGEdge {

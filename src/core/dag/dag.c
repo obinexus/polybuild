@@ -35,14 +35,23 @@ void dag_add_edge(DAGNode *from, DAGNode *to, float weight) {
     if (!from || !to) return;
     
     // Allocate/reallocate outgoing edge array
-    from->out_edges = (DAGEdge*)realloc(from->out_edges, 
-                                       (from->out_count + 1) * sizeof(DAGEdge));
+    from->out_edges = (DAGEdge**)realloc(from->out_edges, 
+                                       (from->out_count + 1) * sizeof(DAGEdge*));
     if (!from->out_edges) return;
+
+    // Allocate memory for the new edge
+    from->out_edges[from->out_count] = (DAGEdge*)malloc(sizeof(DAGEdge));
+    if (!from->out_edges[from->out_count]) return;
     
     // Allocate/reallocate incoming edge array
-    to->in_edges = (DAGEdge*)realloc(to->in_edges, 
-                                    (to->in_count + 1) * sizeof(DAGEdge));
+    to->in_edges = (DAGEdge**)realloc(to->in_edges, 
+                                    (to->in_count + 1) * sizeof(DAGEdge*));
     if (!to->in_edges) return;
+
+    // Allocate memory for the new edge  
+    to->in_edges[to->in_count] = (DAGEdge*)malloc(sizeof(DAGEdge));
+    if (!to->in_edges[to->in_count]) return;
+    
     
       // Set up the new outgoing edge
     from->out_edges[from->out_count]->target = to;
