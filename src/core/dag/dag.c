@@ -98,7 +98,7 @@ static void resolve_node_recursive(DAGNode *nodes[], size_t node_count,
     DAGNode *node = nodes[current];
     for (size_t i = 0; i < node->out_count; i++) {
         // Find index of the target node
-        DAGNode *target = node->out_edges[i].target;
+        DAGNode *target = node->out_edges[i]->target;
         size_t target_idx = 0;
         
         // Find the index of this target node in our nodes array
@@ -132,7 +132,7 @@ static void resolve_node_recursive(DAGNode *nodes[], size_t node_count,
                 // Search for the source node that has this edge
                 for (size_t j = 0; j < node_count; j++) {
                     for (size_t k = 0; k < nodes[j]->out_count; k++) {
-                        if (nodes[j]->out_edges[k].target == node) {
+                        if (nodes[j]->out_edges[k]->target == node) {
                             source = nodes[j];
                             break;
                         }
@@ -143,7 +143,7 @@ static void resolve_node_recursive(DAGNode *nodes[], size_t node_count,
                 if (!source) continue;
                 
                 // Accumulate weighted influence from source nodes
-                float edge_weight = node->in_edges[i].weight;
+                float edge_weight = node->in_edges[i]->weight;
                 if (source->state == STATE_TRUE) {
                     true_weight += edge_weight;
                 } else if (source->state == STATE_FALSE) {
