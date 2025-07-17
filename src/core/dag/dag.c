@@ -44,14 +44,14 @@ void dag_add_edge(DAGNode *from, DAGNode *to, float weight) {
                                     (to->in_count + 1) * sizeof(DAGEdge));
     if (!to->in_edges) return;
     
-    // Set up the new outgoing edge
-    from->out_edges[from->out_count].target = to;
-    from->out_edges[from->out_count].weight = weight;
+      // Set up the new outgoing edge
+    from->out_edges[from->out_count]->target = to;
+    from->out_edges[from->out_count]->weight = weight;
     from->out_count++;
     
-    // Set up the new incoming edge
-    to->in_edges[to->in_count].target = from;
-    to->in_edges[to->in_count].weight = weight;
+    // Set up the new incoming edge  
+    to->in_edges[to->in_count]->target = from;
+    to->in_edges[to->in_count]->weight = weight; 
     to->in_count++;
 }
 

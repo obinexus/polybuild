@@ -23,7 +23,21 @@ typedef enum {
     TOKEN_OPERATOR
 } TokenType;
 
-// Removed TaxonomyCategory enum (now in taxonomy.h)
+
+typedef struct DAGNode {
+  TokenType type;
+  TaxonomyCategory category;
+  NodeState state;
+  struct DAGEdge** in_edges;  
+  struct DAGEdge** out_edges;
+  size_t in_count;
+  size_t out_count;
+} DAGNode;
+
+typedef struct DAGEdge {
+    struct DAGNode* target;
+    float weight;
+} DAGEdge;
 
 /**
  * @brief Node state enumeration
