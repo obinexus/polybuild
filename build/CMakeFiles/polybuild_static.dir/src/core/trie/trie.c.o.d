@@ -1,7 +1,7 @@
-CMakeFiles/polybuild.dir/src/core/integration/trie_dag.c.o: \
- /home/obinexus/obinexus/pkg/polybuild/src/core/integration/trie_dag.c \
+CMakeFiles/polybuild_static.dir/src/core/trie/trie.c.o: \
+ /home/obinexus/obinexus/pkg/polybuild/src/core/trie/trie.c \
  /usr/include/stdc-predef.h \
- /home/obinexus/obinexus/pkg/polybuild/src/core/integration/../dag/dag.h \
+ /home/obinexus/obinexus/pkg/polybuild/src/core/trie/trie.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -45,13 +45,8 @@ CMakeFiles/polybuild.dir/src/core/integration/trie_dag.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /home/obinexus/obinexus/pkg/polybuild/src/core/integration/../dag/../trie/taxonomy.h \
- /home/obinexus/obinexus/pkg/polybuild/src/core/integration/../trie/trie.h \
- /usr/include/regex.h \
- /home/obinexus/obinexus/pkg/polybuild/src/core/integration/../trie/taxonomy.h \
- /home/obinexus/obinexus/pkg/polybuild/src/core/integration/trie_dag.h \
- /home/obinexus/obinexus/pkg/polybuild/src/core/integration/../trie/taxonomy.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/regex.h \
+ /home/obinexus/obinexus/pkg/polybuild/src/core/trie/taxonomy.h \
  /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \

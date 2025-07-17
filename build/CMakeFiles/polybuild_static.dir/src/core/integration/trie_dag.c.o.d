@@ -1,4 +1,4 @@
-CMakeFiles/polybuild.dir/src/core/integration/trie_dag.c.o: \
+CMakeFiles/polybuild_static.dir/src/core/integration/trie_dag.c.o: \
  /home/obinexus/obinexus/pkg/polybuild/src/core/integration/trie_dag.c \
  /usr/include/stdc-predef.h \
  /home/obinexus/obinexus/pkg/polybuild/src/core/integration/../dag/dag.h \
