@@ -2,8 +2,10 @@
 // #include <polybuild/dag.h>
 // #include <polybuild/trie.h>
 // #include <polybuild/trie_dag.h>
+
+
 #include "polybuild/dag.h"
-#include "polybuild/trie.h" 
+#include "polybuild/trie.h"
 #include "polybuild/trie_dag.h"
 int main() {
     printf("PolyBuild Test Suite\n");

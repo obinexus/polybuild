@@ -3,7 +3,6 @@
  * @brief Directed Acyclic Graph implementation for PolyBuild
  * @author OBINexus Computing
  */
-
 #ifndef POLYBUILD_DAG_H
 #define POLYBUILD_DAG_H
 

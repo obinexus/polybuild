@@ -7,9 +7,8 @@
 #ifndef POLYBUILD_TRIE_DAG_H
 #define POLYBUILD_TRIE_DAG_H
 
-#include "polybuild/dag.h"
-#include "polybuild/taxonomy.h"  // Changed from "../dag/dag.h"
-
+#include "../dag/dag.h"
+#include "../trie/taxonomy.h"  
 /**
  * @brief Create DAG nodes from trie matches
  * @param root Trie root node
