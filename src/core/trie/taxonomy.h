@@ -10,12 +10,12 @@
 /**
  * @brief Taxonomy category for classification
  */
+
 typedef enum {
     TAX_UNKNOWN,
-    TAX_ACTION,
+    TAX_ACTION,  
     TAX_RESOURCE,
     TAX_PROPERTY,
     TAX_CONTROLLER
 } TaxonomyCategory;
-
 #endif /* POLYBUILD_TAXONOMY_H */

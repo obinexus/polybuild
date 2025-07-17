@@ -1,1 +1,1 @@
-/usr/bin/cc  -Wall -Wextra -pedantic -O2 -DNDEBUG CMakeFiles/polybuild_test.dir/tests/main.c.o -o polybuild_test  -Wl,-rpath,/home/obinexus/obinexus/pkg/polybuild/build libpolybuild.so 
+/usr/bin/cc  -Wall -Wextra -pedantic -O2 -DNDEBUG CMakeFiles/polybuild_test.dir/tests/main.c.o -o bin/polybuild_test  -Wl,-rpath,/home/obinexus/obinexus/pkg/polybuild/build/lib lib/libpolybuild.so 

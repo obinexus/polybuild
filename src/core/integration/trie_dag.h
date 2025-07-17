@@ -6,9 +6,8 @@
 
 #ifndef POLYBUILD_TRIE_DAG_H
 #define POLYBUILD_TRIE_DAG_H
-
-#include "../dag/dag.h"
-#include "../trie/trie.h"
+#include "../dag/dag.h" 
+#include "../trie/taxonomy.h"
 
 /**
  * @brief Create DAG nodes from trie matches

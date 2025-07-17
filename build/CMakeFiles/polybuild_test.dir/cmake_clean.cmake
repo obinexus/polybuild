@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/polybuild_test.dir/tests/main.c.o"
   "CMakeFiles/polybuild_test.dir/tests/main.c.o.d"
-  "polybuild_test"
-  "polybuild_test.pdb"
+  "bin/polybuild_test"
+  "bin/polybuild_test.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -8,38 +8,30 @@
 #define POLYBUILD_DAG_H
 
 #include <stdint.h>
-#include <stdbool.h>
+#include <stdbool.h> 
 #include <stdlib.h>
+#include "taxonomy.h" // Added to provide TaxonomyCategory
 
 /**
  * @brief Token type enumeration for DAG nodes
  */
 typedef enum {
     TOKEN_UNKNOWN,
-    TOKEN_IDENTIFIER,
+    TOKEN_IDENTIFIER, 
     TOKEN_NUMBER,
     TOKEN_STRING,
     TOKEN_OPERATOR
 } TokenType;
 
-/**
- * @brief Taxonomy category for DAG node classification
- */
-typedef enum {
-    TAX_UNKNOWN,
-    TAX_ACTION,
-    TAX_RESOURCE,
-    TAX_PROPERTY,
-    TAX_CONTROLLER
-} TaxonomyCategory;
+// Removed TaxonomyCategory enum (now in taxonomy.h)
 
 /**
  * @brief Node state enumeration
- */
+ */ 
 typedef enum {
     STATE_UNKNOWN,
     STATE_TRUE,
-    STATE_FALSE
+    STATE_FALSE  
 } NodeState;
 
 /**
@@ -47,7 +39,7 @@ typedef enum {
  */
 typedef struct DAGEdge {
     struct DAGNode* target;
-    float weight;
+    float weight;  
 } DAGEdge;
 
 /**
@@ -55,10 +47,10 @@ typedef struct DAGEdge {
  */
 typedef struct DAGNode {
     TokenType type;
-    TaxonomyCategory category;
+    TaxonomyCategory category; 
     NodeState state;
     DAGEdge* in_edges;
-    DAGEdge* out_edges;
+    DAGEdge* out_edges; 
     size_t in_count;
     size_t out_count;
 } DAGNode;
@@ -70,17 +62,17 @@ typedef struct DAGNode {
 int dag_init(void);
 
 /**
- * @brief Create a new DAG node
+ * @brief Create a new DAG node  
  * @param t Token type for the node
  * @param cat Taxonomy category for the node
- * @return Pointer to the newly created node or NULL on failure
+ * @return Pointer to the newly created node or NULL on failure  
  */
 DAGNode* dag_node_create(TokenType t, TaxonomyCategory cat);
 
 /**
  * @brief Add an edge between two nodes
  * @param from Source node
- * @param to Target node
+ * @param to Target node 
  * @param weight Edge weight (importance factor)
  */
 void dag_add_edge(DAGNode *from, DAGNode *to, float weight);
@@ -88,7 +80,7 @@ void dag_add_edge(DAGNode *from, DAGNode *to, float weight);
 /**
  * @brief Resolve node states through the graph
  * @param nodes Array of nodes to resolve
- * @param node_count Number of nodes in the array
+ * @param node_count Number of nodes in the array  
  */
 void dag_resolve(DAGNode *nodes[], size_t node_count);
 

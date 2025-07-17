@@ -4,7 +4,7 @@
 
 // Maximum number of DAG nodes to create from trie matches
 #define MAX_MATCHES 100
-
+// trie_dag.c
 /**
  * Initialize the trie-dag integration
  */
@@ -25,6 +25,7 @@ DAGNode** create_dag_from_trie_matches(TrieNode* root, const char* text, size_t 
     }
     
     // Allocate result array
+    DAGNode* node = dag_node_create(TOKEN_STRING, (TaxonomyCategory)child->category);
     DAGNode** result = (DAGNode**)calloc(MAX_MATCHES + 1, sizeof(DAGNode*));
     if (!result) {
         return NULL;

@@ -5,8 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/polybuild_static.dir/src/core/integration/trie_dag.c.o.d"
   "CMakeFiles/polybuild_static.dir/src/core/trie/trie.c.o"
   "CMakeFiles/polybuild_static.dir/src/core/trie/trie.c.o.d"
-  "libpolybuild.a"
-  "libpolybuild.pdb"
+  "lib/libpolybuild.a"
+  "lib/libpolybuild.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
